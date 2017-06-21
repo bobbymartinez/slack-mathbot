@@ -7,6 +7,7 @@ gem 'puma'
 gem 'sinatra'
 gem 'dentaku'
 gem 'mysql2'
+gem 'activerecord'
 
 group :development, :test do
   gem 'rake', '~> 10.4'
