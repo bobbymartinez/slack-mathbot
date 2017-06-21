@@ -6,6 +6,7 @@ gem 'slack-ruby-bot', github: 'dblock/slack-ruby-bot' # '~> 0.5.0'
 gem 'puma'
 gem 'sinatra'
 gem 'dentaku'
+gem 'mysql2'
 
 group :development, :test do
   gem 'rake', '~> 10.4'
