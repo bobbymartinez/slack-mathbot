@@ -5,5 +5,9 @@ module SlackMathbot
     get '/' do
       'Math is good for you.'
     end
+
+    get '/hi' do
+      "Hola!!"
+    end
   end
 end
