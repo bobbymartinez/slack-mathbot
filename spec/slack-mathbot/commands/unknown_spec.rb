@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe SlackRubyBot::Commands::Unknown do
   def app
-    SlackMathbot::Bot.instance
+    Goatr::Bot.instance
   end
   let(:client) { app.send(:client) }
   it 'invalid command' do
@@ -10,6 +10,6 @@ describe SlackRubyBot::Commands::Unknown do
   end
   it 'does not respond to sad face' do
     expect(SlackRubyBot::Client).to_not receive(:say)
-    SlackMathbot::Bot.instance.send(:message, client, text: ':((')
+    Goatr::Bot.instance.send(:message, client, text: ':((')
   end
 end

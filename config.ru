@@ -1,11 +1,11 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
-require 'slack-mathbot'
+require 'goatr'
 require 'web'
 
 Thread.new do
   begin
-    SlackMathbot::Bot.run
+    Goatr::Bot.run
   rescue Exception => e
     STDERR.puts "ERROR: #{e}"
     STDERR.puts e.backtrace
@@ -13,4 +13,4 @@ Thread.new do
   end
 end
 
-run SlackMathbot::Web
+run Goatr::Web

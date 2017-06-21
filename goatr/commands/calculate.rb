@@ -1,4 +1,4 @@
-module SlackMathbot
+module Goatr
   module Commands
     class Calculate < SlackRubyBot::Commands::Base
       operator '='

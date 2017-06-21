@@ -1,4 +1,4 @@
-# Contributing to SlackMathbot
+# Contributing to Goatr
 
 This project is work of [many contributors](https://github.com/dblock/slack-mathbot/graphs/contributors).
 
@@ -25,7 +25,7 @@ bundle install
 bundle exec rake
 ```
 
-## Run SlackMathbot in Development
+## Run Goatr in Development
 
 Create a private slack group for yourself.
 

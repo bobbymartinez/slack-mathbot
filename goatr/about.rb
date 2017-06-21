@@ -1,6 +1,6 @@
-module SlackMathbot
+module Goatr
   ABOUT = <<-ABOUT
-    #{SlackMathbot::VERSION}
+    #{Goatr::VERSION}
     https://github.com/dblock/slack-mathbot
     https://twitter.com/dblockdotorg
   ABOUT

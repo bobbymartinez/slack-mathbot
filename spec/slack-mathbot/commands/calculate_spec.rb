@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe SlackMathbot::Commands::Calculate do
+describe Goatr::Commands::Calculate do
   def app
-    SlackMathbot::Bot.instance
+    Goatr::Bot.instance
   end
   it 'adds two numbers' do
     expect(message: 'mathbot calculate 2+2', channel: 'channel').to respond_with_slack_message('4')

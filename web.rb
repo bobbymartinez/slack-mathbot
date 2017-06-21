@@ -1,9 +1,9 @@
 require 'sinatra/base'
 
-module SlackMathbot
+module Goatr
   class Web < Sinatra::Base
     get '/' do
-      'Math is good for you.'
+      "It's a whole new Goat Rodeo"
     end
 
     get '/hi' do

@@ -1,3 +1,3 @@
-module SlackMathbot
+module Goatr
   VERSION = '0.1.0'
 end
