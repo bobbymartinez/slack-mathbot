@@ -131,7 +131,7 @@ DEPENDENCIES
   mysql2
   puma
   rack-test
-  rake (~> 10.4.2)
+  rake (~> 10.4)
   rspec
   rubocop (= 0.31.0)
   sinatra
