@@ -4,7 +4,7 @@ module Goatr
   module Commands
     class Incident < SlackRubyBot::Commands::Base
 
-      match(/^incident channel (?<channel_name>\w*)$/i) do |client, data, match|
+      match(/^incident initiate (?<channel_name>\w*)$/i) do |client, data, match|
         client.say(channel: data.channel, text: "#{data.to_s}", gif: 'fire')
         client.say(channel: data.channel, text: "Making an Incident channel with the name #{channel_name}...")
         #
