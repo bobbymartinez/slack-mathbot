@@ -8,12 +8,11 @@ module Goatr
         client.say(channel: data.channel,
         text: "Making an Incident channel with the name #{match[:channel_name]}...",
         gif:'welcome to the party pal')
-        #
-        # #create a channel with the first 21 characters of supplied name
-        # response = create_channel(channel_name)
-        #
-        # new_channel_id = get_channel_id(response)
-        # client.say(channel: data.channel, text: "Incident channel #{channel_name} successfully created")
+
+        #create a channel with the first 21 characters of supplied name
+        response = create_channel(channel_name)
+        new_channel_id = get_channel_id(response)
+        client.say(channel: data.channel, text: "Incident channel #{match[:channel_name} successfully created")
 
       end
 
