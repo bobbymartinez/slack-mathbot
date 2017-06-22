@@ -10,7 +10,7 @@ module Goatr
         gif:'welcome to the party pal')
 
         #create a channel with the first 21 characters of supplied name
-        response = create_channel(channel_name)
+        response = create_channel(match[:channel_name])
         new_channel_id = get_channel_id(response)
         client.say(channel: data.channel, text: "Incident channel #{match[:channel_name]} successfully created")
 
