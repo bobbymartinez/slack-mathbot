@@ -8,13 +8,12 @@ module Goatr
 
       match(/^goatr incident initiate (?<channel_name>\w*)$/i) do |client, data, match|
         client.say(channel: data.channel,
-        text: "Making an Incident channel with the name #{match[:channel_name]}...",
-        gif:'welcome to the party pal')
+        text: "Making an Incident channel with the name #{match[:channel_name]}...")
 
         #create a channel with the first 21 characters of supplied name
         response = create_channel(match[:channel_name])
         new_channel_id = get_channel_id(response)
-        client.say(channel: data.channel, text: "Incident channel #{match[:channel_name]} successfully created.")
+        client.say(channel: data.channel, text: "Incident channel #{match[:channel_name]} successfully created.\n http://media0.giphy.com/media/e8zJazFcehZ60/giphy.gif")
         client.say(channel: data.channel, text: "Now starting the goat rodeo.  Inviting Ops to channel with IDS #{get_usergroup_users}")
 
       end
