@@ -34,7 +34,7 @@ module Goatr
 
         #this method isn't working for some reason. I'll look into submitting
         #a patch at some point, for now, hardcoding ops user ids.
-        def get_usergroup_users(usergroup_id)
+        def get_usergroup_users
           ENV['OPS_SLACK_IDS'].split(",")
           #Slack::Web::Client.new(token:@slack_user_token).usergroups_users(usergroup_id)
         end
