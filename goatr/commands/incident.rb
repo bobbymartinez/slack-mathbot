@@ -4,7 +4,7 @@ module Goatr
   module Commands
     class Incident < SlackRubyBot::Commands::Base
       @ops_slack_usergroup_handle = ENV['OPS_SLACK_USERGROUP_HANDLE']
-      @slack_user_token = ENV['SLACK_USER_TOKEN']
+      @slack_user = Slack::Web::Client.new(token:ENV['SLACK_USER_TOKEN'])
 
       match(/^goatr incident initiate (?<channel_name>\w*)$/i) do |client, data, match|
         client.say(channel: data.channel,
@@ -21,7 +21,7 @@ module Goatr
 
       class << self
         def create_channel(channel_name)
-          Slack::Web::Client.new(token:@slack_user_token).channels_create(name:channel_name[0..20])
+          @slack_user.channels_create(name:channel_name[0..20])
         end
 
         def invite_users_to_channel(channel_id,user_ids)
@@ -31,11 +31,13 @@ module Goatr
         end
 
         def invite_user_to_channel(channel_id,user_id)
-          Slack::Web::Client.new(@slack_user_token).channels_invite(channel:channel_id,user:user_id)
+          @slack_user.channels_invite(channel:channel_id,user:user_id)
         end
 
-        def get_usegroups
-          Slack::Web::Client.new(@slack_user_token).usergroups_list
+        #can put this in use when the usergroup is dynamic.
+        #for now slack user ids are hardcoded
+        def get_usergroups
+          @slack_user.usergroups_list
         end
 
         def get_usergroup_id(usergroup_handle,response)
@@ -53,11 +55,8 @@ module Goatr
           response['channel']['id']
         end
 
-        def inivite_users()
-
-        end
-
-        def incident_name()
+        #To be implemented, input validation for legimitate slack channel names
+        def incident_name
 
         end
 
